@@ -1,13 +1,7 @@
-"""Real-Time Transaction Risk Platform.
+"""Enterprise RAG & LLM Evaluation Platform.
 
-An original reference implementation of a streaming transaction-risk
-pipeline: synthetic data generation -> Kafka -> streaming scoring
-(rule signals + an ML model trained on synthetic data) -> FastAPI
-scoring service, with a Spark Structured Streaming variant of the
-streaming job.
-
-All data in this project is synthetic. No real customer, bank, or
-employer data is used anywhere.
+A small, self-contained reference implementation of a retrieval-augmented
+generation (RAG) pipeline with a built-in evaluation harness.
 """
 
-__version__ = "1.0.0"
+__version__ = "0.1.0"
