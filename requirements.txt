@@ -1,21 +1,15 @@
-# Core
-numpy>=1.26
-pandas>=2.0
-scikit-learn>=1.3
-joblib>=1.3
+# Core dependencies for the Enterprise RAG & LLM Evaluation Platform
+numpy>=1.26,<2.0
+scikit-learn>=1.4,<1.6
+fastapi>=0.110,<0.116
+uvicorn[standard]>=0.29,<0.31
+pydantic>=2.6,<3.0
 
-# API service
-fastapi>=0.110
-uvicorn[standard]>=0.29
-pydantic>=2.6
+# Development / testing
+pytest>=8.0,<9.0
+httpx>=0.27,<0.28
 
-# Kafka client (producer / consumer)
-kafka-python>=2.0.2
-
-# Development / tests
-pytest>=8.0
-httpx>=0.27
-
-# Optional: Spark Structured Streaming job (src/spark_streaming_job.py)
-# Heavyweight and needs a JDK (11/17) — install only if you want it:
-# pyspark>=3.5
+# Optional (not required — the platform runs fully without them):
+#   sentence-transformers>=2.7   # neural embeddings via EMBEDDER=sentence-transformers
+#   openai>=1.30                 # LLM generation via LLM_BACKEND=openai (needs OPENAI_API_KEY)
+#   faiss-cpu>=1.8               # alternative vector index for very large corpora
