@@ -1,14 +1,21 @@
+# Core
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.3
+joblib>=1.3
+
+# API service
 fastapi>=0.110
 uvicorn[standard]>=0.29
-sqlalchemy>=2.0
 pydantic>=2.6
 
-# Optional: PostgreSQL driver (only needed when DATABASE_URL points at Postgres)
-# psycopg[binary]>=3.1
-
-# Optional: real LLM backend (only needed when MERCHANT_LLM_PROVIDER=openai)
-# openai>=1.30
+# Kafka client (producer / consumer)
+kafka-python>=2.0.2
 
 # Development / tests
 pytest>=8.0
 httpx>=0.27
+
+# Optional: Spark Structured Streaming job (src/spark_streaming_job.py)
+# Heavyweight and needs a JDK (11/17) — install only if you want it:
+# pyspark>=3.5

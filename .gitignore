@@ -2,21 +2,18 @@
 __pycache__/
 *.py[cod]
 *.egg-info/
-.pytest_cache/
 .venv/
 venv/
+.pytest_cache/
 
-# Generated data & trained models (regenerate with the scripts)
-data/*.csv
-models/*.joblib
-models/*.json
-!data/.gitkeep
-!models/.gitkeep
+# Local vector-store persistence and run artifacts
+data/index/
+*.npz
+eval_reports/
 
-# Spark
-spark-warehouse/
-metastore_db/
-derby.log
+# Environment / secrets
+.env
+*.key
 
 # OS / editors
 .DS_Store
