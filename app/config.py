@@ -1,8 +1,4 @@
-"""Runtime configuration, driven by environment variables.
-
-Defaults are chosen so the whole system runs offline with zero setup:
-SQLite for storage and a deterministic offline LLM fallback.
-"""
+"""Runtime configuration, overridable via environment variables."""
 
 from __future__ import annotations
 
@@ -10,21 +6,27 @@ import os
 from dataclasses import dataclass
 
 
-@dataclass(frozen=True)
+@dataclass
 class Settings:
-    # SQLite by default; set DATABASE_URL to a PostgreSQL DSN
-    # (e.g. postgresql+psycopg://user:pass@localhost:5432/merchant_intel)
-    # to use the docker-compose database instead.
-    database_url: str = os.environ.get(
-        "DATABASE_URL", "sqlite:///./merchant_intel.db"
+    # Chunking
+    chunk_size: int = int(os.getenv("CHUNK_SIZE", "800"))
+    chunk_overlap: int = int(os.getenv("CHUNK_OVERLAP", "120"))
+
+    # Retrieval
+    default_top_k: int = int(os.getenv("TOP_K", "4"))
+
+    # Embeddings backend: "tfidf" (default, no downloads) or "sentence-transformers"
+    embedder: str = os.getenv("EMBEDDER", "tfidf")
+    sentence_transformer_model: str = os.getenv(
+        "ST_MODEL", "sentence-transformers/all-MiniLM-L6-v2"
     )
-    # "offline" (default, deterministic, no API key) or "openai".
-    llm_provider: str = os.environ.get("MERCHANT_LLM_PROVIDER", "offline")
-    openai_api_key: str | None = os.environ.get("OPENAI_API_KEY")
-    openai_model: str = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
-    # Seed for the synthetic dataset generator.
-    data_seed: int = int(os.environ.get("MERCHANT_DATA_SEED", "42"))
-    seed_merchant_count: int = int(os.environ.get("MERCHANT_SEED_COUNT", "24"))
+
+    # LLM backend: "extractive" (default, no API key needed) or "openai"
+    llm_backend: str = os.getenv("LLM_BACKEND", "extractive")
+    openai_model: str = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+
+    # Persistence directory for the vector store (empty string = in-memory only)
+    index_dir: str = os.getenv("INDEX_DIR", "")
 
 
 settings = Settings()

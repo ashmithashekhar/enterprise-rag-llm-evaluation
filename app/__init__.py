@@ -1,8 +1,13 @@
-"""Multi-Agent Merchant Intelligence Platform.
+"""Real-Time Transaction Risk Platform.
 
-A small, self-contained reference implementation of a LangGraph-style
-multi-agent pipeline that analyses synthetic merchant payment data and
-produces structured intelligence reports.
+An original reference implementation of a streaming transaction-risk
+pipeline: synthetic data generation -> Kafka -> streaming scoring
+(rule signals + an ML model trained on synthetic data) -> FastAPI
+scoring service, with a Spark Structured Streaming variant of the
+streaming job.
+
+All data in this project is synthetic. No real customer, bank, or
+employer data is used anywhere.
 """
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
