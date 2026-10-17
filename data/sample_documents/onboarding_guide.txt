@@ -1,0 +1,15 @@
+Brightline Software — New Employee Onboarding Guide (Sample Document)
+
+This is a synthetic sample document written for demonstration purposes. Brightline Software is a fictional company and this guide is illustrative only.
+
+First week
+
+New employees receive their laptop, badge, and account credentials on their first day from the IT help desk. During the first week, employees complete security awareness training, set up multi-factor authentication, and meet their onboarding buddy.
+
+Access and tools
+
+Access to internal systems is provisioned based on role. All employees get access to email, the team chat workspace, and the document library. Engineering staff additionally receive access to the source code repositories and the staging environment after their manager approves the access request.
+
+Probation and reviews
+
+The probation period is three months. A first performance review is scheduled at the end of the probation period, and regular reviews happen every six months after that. Employees become eligible for the annual bonus program after completing six months of service.

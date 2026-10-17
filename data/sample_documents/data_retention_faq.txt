@@ -1,0 +1,15 @@
+Brightline Software — Data Retention FAQ (Sample Document)
+
+This is a synthetic sample document written for demonstration purposes. Brightline Software is a fictional company and this FAQ is illustrative only.
+
+How long is customer data retained?
+
+Active customer data is retained for the duration of the subscription. After an account is closed, customer data is kept for 90 days to allow recovery in case of accidental closure, and is then permanently deleted from production systems.
+
+What about backups?
+
+Encrypted backups are retained for 35 days on a rolling basis. Data that has been deleted from production systems is removed from backups as the backups age out of the 35-day window. Backups are never used for analytics or product development.
+
+Can customers export their data?
+
+Yes. Account administrators can export all workspace data at any time from the settings page in CSV or JSON format. Exports are available for download for 7 days after they are generated.
